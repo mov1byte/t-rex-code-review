@@ -15,9 +15,13 @@ apply plugin: 'io.spring.dependency-management'
 
 mainClassName = 'morcheka_task.Application'
 
+
+
 bootJar {
-    baseName = 'morcheka_task'
-    version =  '0.1.0'
+    // deprecated. use settings.gradle
+
+    //baseName = 'morcheka_task'
+    //version =  '0.1.0'
 }
 
 repositories {
@@ -39,10 +43,11 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile("org.springframework.boot:spring-boot-starter-web")
     compile('org.postgresql:postgresql')
-    compile('com.google.guava:guava:11.0.2')
     compile('org.springframework.boot:spring-boot-starter-security:2.2.1.RELEASE')
+    // avoid using lombok
     compileOnly('org.projectlombok:lombok:1.18.8')
     annotationProcessor('org.projectlombok:lombok:1.18.8')
+    // there are no tests lol
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('com.jayway.jsonpath:json-path')
 }

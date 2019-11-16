@@ -1,28 +1,26 @@
 package morcheka_task.payload;
 
+import lombok.Builder;
 import lombok.Data;
-import lombok.NonNull;
 
 import javax.validation.constraints.NotBlank;
 
+@Builder
 @Data
-public final class NoteRequest {
-
-    private Long id;
+public final class NoteView {
 
     @NotBlank
-    @NonNull
+    private long id;
+
+    @NotBlank
     private String firstName;
 
     @NotBlank
-    @NonNull
     private String lastName;
 
     @NotBlank
-    @NonNull
     private String address;
 
     @NotBlank
-    @NonNull
     private String phone;
 }
